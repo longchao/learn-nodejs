@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" >
+<head>
+<meta charset="utf-8" >
+<title>Learn nodejs</title>
+<script src="//code.jquery.com/jquery.js" ></script>
+<script>
+;(function(win, jq, undefined){
+	jq(function($){
+		var $users = $('#users');
+		$.get('/users', function(data){
+			//
+			var users = data.users;
+			$.each(users, function(key, user){
+				var userElement = $('<li />').text(user);
+				$users.append(userElement);
+			});
+		});
+	});
+})(window, jQuery);
+</script>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<ul id="users"></ul>
+</body>
+</html>
